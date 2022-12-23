@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var flag=[];
+        var names=[]; var populations=[]; var regions=[]; var subregions=[];
+    var request=new XMLHttpRequest();
+    request.open('GET','https://restcountries.com/v3.1/all');
+    request.send();
+    request.onload=function(){
+    var data=request.response;
+    var res=JSON.parse(data);
+    for(let i=0;i<res.length;i++){
+        console.log(res[i].region);
+    flag.push(res[i].flags.png);
+    names.push(res[i].name.common);
+    regions.push(res[i].region);
+    subregions.push(res[i].subregion);
+    populations.push(res[i].population);
+
+console.log(`the name of the country is ${names[i]} and it is present in the region of
+${regions[i]} and it belongs to subregion of${subregions[i]} and the current population of 
+the country is${populations[i]} `);
+    }
+   
+    }
+</script>
+</body>
+</html>
