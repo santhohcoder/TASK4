@@ -1,0 +1,23 @@
+How will you compare two objects of same data but in differenet format??
+
+Answer We can use Lo dash function and comapre to objects 
+The syntax for th efollowing is given below
+
+
+-.isEqual(object1name , object2nmae))
+
+Example:::
+
+const obj1= {
+  name: 'santhosh',
+  address: 'India'
+};
+    
+const obj2 = {
+  address: 'India',
+  name: 'santhosh'
+};
+
+    
+_.isEqual(obj1, obj2)
+ true
